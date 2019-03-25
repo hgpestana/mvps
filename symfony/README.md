@@ -1,11 +1,20 @@
-Symfony Standard Edition
-========================
+OWL Education Platform
+==============
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+This project was created as a helper platform for teachers control and grade students in school acordding to the 
+Portuguese education system.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+This is a complete stack of Symfony 3 (latest version: Flex) into Docker containers using docker-compose tool.
+
+# Installation
+
+First, clone this repository into a PHP 7.2 web server (NGINX recommended):
+
+```bash
+$ git clone https://github.com/hgpestana/owl.git
+```
+
+Then access the URL and that's it!
 
 What's inside?
 --------------
@@ -19,6 +28,8 @@ The Symfony Standard Edition is configured with the following defaults:
   * Doctrine ORM/DBAL;
 
   * Swiftmailer;
+  
+  * FOSUserBundle;
 
   * Annotations enabled for everything.
 
@@ -53,6 +64,9 @@ It comes pre-configured with the following bundles:
   * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
     using the PHP built-in web server
 
+  * **FOSUserBundle** - Add user authentication and registration support
+    in the project
+    
   * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
     integration
 
