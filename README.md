@@ -1,17 +1,14 @@
-OWL Education Platform
+MVPS Project
 ==============
 
-This project was created as a helper platform for teachers control and grade students in school acordding to the 
-Portuguese education system.
-
-This is a complete stack of  Symfony 4 (latest version: Flex) into Docker containers using docker-compose tool.
+This is a complete set of Docker files for several projects.
 
 # Installation
 
 First, clone this repository:
 
 ```bash
-$ git clone https://github.com/hgpestana/owl.git
+$ git clone https://github.com/hgpestana/mvps.git
 ```
 
 Then, run:
@@ -21,7 +18,11 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-You are done, you can visit the Owl application on the following URL: `http://owl.localhost` (and access Kibana on `http://owl.localhost:81`)
+You are done, you can visit the following applications at their URLS:
+
+    * Owl application on the following URL: `http://owl.localhost` 
+    
+    * Kibana on `http://owl.localhost:81`
 
 _Note :_ you can rebuild all Docker images by running:
 
