@@ -51,11 +51,12 @@ ADD symfony.ini /etc/php7/conf.d/
 ADD symfony.ini /etc/php7/cli/conf.d/
 ADD xdebug.ini  /etc/php7/conf.d/
 
-ADD symfony.pool.conf /etc/php7/php-fpm.d/
+ADD fpm.pool.conf /etc/php7/php-fpm.d/
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
 CMD ["/usr/sbin/php-fpm7", "-R", "--nodaemonize"]
 
-WORKDIR /var/www/symfony
+#WORKDIR /var/www/symfony
+
 EXPOSE 9001
