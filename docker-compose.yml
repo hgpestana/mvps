@@ -1,42 +1,59 @@
 version: '3.7'
 services:
-    db:
-        image: mysql
-        command: ["--default-authentication-plugin=mysql_native_password"]
-        ports:
-            - "3306:3306"
+    mariadb:
+        image: mariadb
+        container_name: mariadb
+        restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: symfony
-            MYSQL_USER: symfony
-            MYSQL_PASSWORD: symfony
+            MYSQL_ROOT_PASSWORD: MySecretp455w0rd
+        volumes:
+            - "./mysql:/var/lib/mysql"
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        restart: always
+        environment:
+            - "PMA_HOST=mariadb"
+            - "PMA_PORT=3306"
+        links:
+            - "mariadb"
+        ports:
+            - "5054:80"
+        volumes:
+            - "./sessions:/sessions"
     php:
         build: ./build/php-fpm
+        container_name: php
         ports:
             - "9000:9001"
         volumes:
-            - ./symfony:/var/www/symfony:cached
-            - ./logs/symfony:/var/www/symfony/var/log:cached
-        links:
-            - db
+            - "./symfony:/var/www/symfony:cached"
+            - "./wordpress:/var/www/wordpress:cached"
+            - "./logs/symfony:/var/www/symfony/var/log:cached"
         extra_hosts:
             - "docker-host.localhost:127.0.0.1"
+        links:
+            - "mariadb"
     nginx:
         build: ./build/nginx
+        container_name: nginx
         ports:
             - "80:80"
         links:
-            - php
+            - "php"
         volumes:
-            - ./logs/nginx:/var/log/nginx:cached
-            - ./symfony:/var/www/symfony:cached
+            - "./logs/nginx:/var/log/nginx:cached"
+            - "./symfony:/var/www/symfony:cached"
+            - "./wordpress:/var/www/wordpress:cached"
+        links:
+            - "mariadb"
     elk:
         image: willdurand/elk
+        container_name: elk
         ports:
             - "81:80"
         volumes:
-            - ./elk/logstash:/etc/logstash:cached
-            - ./elk/logstash/patterns:/opt/logstash/patterns:cached
-            - ./logs/symfony:/var/www/symfony/var/log:cached
-            - ./logs/nginx:/var/log/nginx:cached
-
+            - "./elk/logstash:/etc/logstash:cached"
+            - "./elk/logstash/patterns:/opt/logstash/patterns:cached"
+            - "./logs/symfony:/var/www/symfony/var/log:cached"
+            - "./logs/nginx:/var/log/nginx:cached"
