@@ -109,4 +109,10 @@ symfony/var/sessions/*
 symfony/vendor/
 symfony/web/bundles/
 
+#MySQL
+mysql/*
+
+#PHPMyAdmin
+sessions/*
+
 # End of https://www.gitignore.io/api/phpstorm
