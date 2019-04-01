@@ -8,6 +8,8 @@ services:
             MYSQL_ROOT_PASSWORD: MySecretp455w0rd
         volumes:
             - "./mysql:/var/lib/mysql"
+        ports:
+            - "3306:3306"
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: phpmyadmin
@@ -41,12 +43,11 @@ services:
             - "80:80"
         links:
             - "php"
+            - "mariadb"
         volumes:
             - "./logs/nginx:/var/log/nginx:cached"
             - "./symfony:/var/www/symfony:cached"
             - "./wordpress:/var/www/wordpress:cached"
-        links:
-            - "mariadb"
     elk:
         image: willdurand/elk
         container_name: elk
