@@ -1,5 +1,5 @@
 server {
-        server_name wordpress.localhost www.wordpress.localhost;
+        server_name hgpestana.software www.hgpestana.software;
         root /var/www/wordpress;
         index index.php;
 

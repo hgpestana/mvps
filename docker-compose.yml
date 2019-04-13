@@ -6,9 +6,9 @@ services:
         ports:
             - "9000:9001"
         volumes:
-            - "./symfony:/var/www/symfony:cached"
-            - "./wordpress:/var/www/wordpress:cached"
-            - "./logs/symfony:/var/www/symfony/var/log:cached"
+            - "./symfony:/var/www/symfony"
+            - "./wordpress:/var/www/wordpress"
+            - "./logs/symfony:/var/www/symfony/var/log"
         extra_hosts:
             - "docker-host.localhost:127.0.0.1"
     nginx:
@@ -20,9 +20,9 @@ services:
         links:
             - "php"
         volumes:
-            - "./logs/nginx:/var/log/nginx:cached"
-            - "./symfony:/var/www/symfony:cached"
-            - "./wordpress:/var/www/wordpress:cached"
+            - "./logs/nginx:/var/log/nginx"
+            - "./symfony:/var/www/symfony"
+            - "./wordpress:/var/www/wordpress"
 #    elk:
 #        image: willdurand/elk
 #        container_name: elk
