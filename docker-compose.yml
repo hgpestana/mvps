@@ -1,28 +1,5 @@
 version: '3.7'
 services:
-    mariadb:
-        image: mariadb
-        container_name: mariadb
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: MySecretp455w0rd
-        volumes:
-            - "./mysql:/var/lib/mysql"
-        ports:
-            - "3306:3306"
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        container_name: phpmyadmin
-        restart: always
-        environment:
-            - "PMA_HOST=mariadb"
-            - "PMA_PORT=3306"
-        links:
-            - "mariadb"
-        ports:
-            - "5054:80"
-        volumes:
-            - "./sessions:/sessions"
     php:
         build: ./build/php-fpm
         container_name: php
@@ -34,8 +11,6 @@ services:
             - "./logs/symfony:/var/www/symfony/var/log:cached"
         extra_hosts:
             - "docker-host.localhost:127.0.0.1"
-        links:
-            - "mariadb"
     nginx:
         build: ./build/nginx
         container_name: nginx
@@ -43,7 +18,6 @@ services:
             - "80:80"
         links:
             - "php"
-            - "mariadb"
         volumes:
             - "./logs/nginx:/var/log/nginx:cached"
             - "./symfony:/var/www/symfony:cached"
@@ -52,7 +26,7 @@ services:
         image: willdurand/elk
         container_name: elk
         ports:
-            - "81:80"
+            - "9081:80"
         volumes:
             - "./elk/logstash:/etc/logstash:cached"
             - "./elk/logstash/patterns:/opt/logstash/patterns:cached"

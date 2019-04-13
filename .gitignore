@@ -87,32 +87,13 @@ fabric.properties
 .idea/sonarlint
 
 #logs folder
-logs/nginx/*
-logs/symfony/*
+logs/**
 
 #Symfony addition
-symfony/.web-server-pid
-symfony/app/config/parameters.yml
-symfony/build/
-symfony/phpunit.xml
-symfony/var/*
-!symfony/var/cache
-symfony/var/cache/*
-!symfony/var/cache/.gitkeep
-!symfony/var/logs
-symfony/var/logs/*
-!symfony/var/logs/.gitkeep
-!symfony/var/sessions
-symfony/var/sessions/*
-!symfony/var/sessions/.gitkeep
-!symfony/var/SymfonyRequirements.php
-symfony/vendor/
-symfony/web/bundles/
+symfony/*
 
-#MySQL
-mysql/*
+#Wordpress
+wordpress/*
 
-#PHPMyAdmin
-sessions/*
 
 # End of https://www.gitignore.io/api/phpstorm
