@@ -41,6 +41,8 @@ RUN apk --update add ca-certificates \
     php-redis@cast \
     php-fpm@cast \
     php-sodium@cast \
+    php-cli \
+    php-mysqli \    
     make \
     curl
 
@@ -57,6 +59,6 @@ ENTRYPOINT ["/sbin/tini", "--"]
 
 CMD ["/usr/sbin/php-fpm7", "-R", "--nodaemonize"]
 
-#WORKDIR /var/www/symfony
+WORKDIR /var/www/
 
 EXPOSE 9001
