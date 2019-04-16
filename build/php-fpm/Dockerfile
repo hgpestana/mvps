@@ -41,6 +41,12 @@ RUN apk --update add ca-certificates \
     php-redis@cast \
     php-fpm@cast \
     php-sodium@cast \
+    php-imagick \
+    php-gmagick \
+    php-ssh2 \
+    php-date \
+    php-gd \
+    php-tokenizer \
     php-cli \
     php-mysqli \    
     make \
