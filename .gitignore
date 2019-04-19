@@ -91,6 +91,9 @@ logs/**
 
 #Symfony addition
 symfony/*
+.symfony
+../symfony/*
+symfony 
 
 #Wordpress
 wordpress/*

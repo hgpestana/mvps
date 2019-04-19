@@ -1,5 +1,5 @@
 server {
-    server_name owl.localhost www.owl.localhost;
+    server_name owl.hgpestana.software www.owl.hgpestana.software;
     root /var/www/symfony/web;
 
     location / {
