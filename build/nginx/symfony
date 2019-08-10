@@ -1,5 +1,5 @@
 server {
-    server_name foca.hgpestana.software www.foca.hgpestana.software;
+    server_name api.gratefulness.guru;
     root /var/www/symfony/web;
 
     location / {
