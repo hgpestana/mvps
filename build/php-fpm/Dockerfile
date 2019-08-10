@@ -1,48 +1,45 @@
-FROM alpine:3.8
+FROM alpine:edge
 
 LABEL maintainer="Hélder Pestana <hgpestana@gmail.com>"
 
-ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-
-RUN apk --update add ca-certificates \
-    && echo "@edge-main http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
-    && echo "@edge-community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
-    && echo "@cast https://php.codecasts.rocks/v3.8/php-7.2" >> /etc/apk/repositories \
-    && apk add -U \
+ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+RUN apk --update add ca-certificates
+RUN echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
+RUN apk add -U \
     # Packages
     tini \
-    php@cast \
-    php-dev@cast \
-    php-common@cast \
-    php-apcu@cast \
-    php-bcmath@cast \
-    php-ctype@cast \
-    php-curl@cast \
-    php-exif@cast \
-    php-iconv@cast \
-    php-intl@cast \
-    php-json@cast \
-    php-mbstring@cast \
-    php-opcache@cast \
-    php-openssl@cast \
-    php-pcntl@cast \
-    php-pdo@cast \
-    php-mysqlnd@cast \
-    php-pdo_mysql@cast \
-    php-pdo_pgsql@cast \
-    php-phar@cast \
-    php-posix@cast \
-    php-session@cast \
-    php-xml@cast \
-    php-xsl@cast \
-    php-zip@cast \
-    php-zlib@cast \
-    php-dom@cast \
-    php-redis@cast \
-    php-fpm@cast \
-    php-sodium@cast \
-    php-imagick@cast \
-    php-ssh2@cast \
+    php \
+    php-dev \
+    php-common \
+    php-apcu \
+    php-bcmath \
+    php-ctype \
+    php-curl \
+    php-exif \
+    php-iconv \
+    php-intl \
+    php-json \
+    php-mbstring \
+    php-opcache \
+    php-openssl \
+    php-pcntl \
+    php-pdo \
+    php-mysqlnd \
+    php-pdo_mysql \
+    php-pdo_pgsql \
+    php-phar \
+    php-posix \
+    php-session \
+    php-xml \
+    php-xsl \
+    php-zip \
+    php-zlib \
+    php-dom \
+    php-redis \
+    php-fpm \
+    php-sodium \
+    php-imagick \
     php-gd \
     php-tokenizer \
     php-cli \
