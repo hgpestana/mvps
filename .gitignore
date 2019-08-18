@@ -98,5 +98,7 @@ symfony
 #Wordpress
 wordpress/*
 
+# SSL Certificate
+build/nginx/hgpestana_software.*
 
 # End of https://www.gitignore.io/api/phpstorm
