@@ -142,6 +142,8 @@ COPY symfony /etc/nginx/sites-enabled/symfony
 COPY wordpress /etc/nginx/sites-enabled/wordpress
 COPY hgpestana_software.crt /etc/ssl
 COPY hgpestana_software.key  /etc/ssl
+COPY gratefulness.key /etc/ssl
+COPY gratefulness.crt /etc/ssl
 
 RUN echo "upstream php-upstream { server php:9001; }" > /etc/nginx/conf.d/upstream.conf
 

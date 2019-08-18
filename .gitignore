@@ -100,5 +100,7 @@ wordpress/*
 
 # SSL Certificate
 build/nginx/hgpestana_software.*
+build/nginx/gratefulness.*
+
 
 # End of https://www.gitignore.io/api/phpstorm
