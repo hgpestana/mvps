@@ -1,9 +1,22 @@
 server {
+	listen 80;
+	listen [::]:80;
+	server_name hgpestana.software www.hgpestana.software;
+	return 301 https://$server_name$request_uri;
+}
+
+server {
         server_name hgpestana.software www.hgpestana.software;
         root /var/www/wordpress;
         index index.php;
 
-        location = /favicon.ico {
+        listen 443;
+        ssl on;
+
+        ssl_certificate /etc/ssl/hgpestana_software.crt;
+        ssl_certificate_key /etc/ssl/hgpestana_software.key;
+
+	 location = /favicon.ico {
             log_not_found off;
             access_log off;
         }
