@@ -6,7 +6,7 @@ server {
 }
 
 server {
-     server_name gratefulness.guru www.gratefulness.guru;;
+     server_name gratefulness.guru www.gratefulness.guru;
      root /var/www/gratefulness/build;
 
      listen 443;
