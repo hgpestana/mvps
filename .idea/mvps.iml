@@ -12,6 +12,8 @@
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/ramsey/uuid-doctrine" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/cache-contracts" />
@@ -33,6 +35,7 @@
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/maker-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/monolog-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/polyfill-php73" />

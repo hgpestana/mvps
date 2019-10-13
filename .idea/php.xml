@@ -96,6 +96,9 @@
       <path value="$PROJECT_DIR$/symfony/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/symfony/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/symfony/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/symfony/vendor/ramsey/uuid-doctrine" />
+      <path value="$PROJECT_DIR$/symfony/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/monolog-bridge" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
