@@ -11,8 +11,8 @@ server {
 
      listen 443;
      ssl on;
-     ssl_certificate /etc/ssl/gratefulness.guru.crt;
-     ssl_certificate_key /etc/ssl/gratefulness.guru.key;
+     ssl_certificate /etc/ssl/gratefulness.crt;
+     ssl_certificate_key /etc/ssl/gratefulness.key;
 
     location / {
         try_files $uri /index.php$is_args$args;
