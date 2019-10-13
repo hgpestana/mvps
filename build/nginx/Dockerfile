@@ -143,6 +143,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY symfony /etc/nginx/sites-enabled/symfony
 COPY wordpress /etc/nginx/sites-enabled/wordpress
+COPY gratefulness /etc/nginx/sites-enabled/gratefulness
 COPY hgpestana_software.crt /etc/ssl
 COPY hgpestana_software.key  /etc/ssl
 COPY gratefulness.key /etc/ssl

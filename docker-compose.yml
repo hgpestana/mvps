@@ -8,6 +8,7 @@ services:
         volumes:
             - "./symfony:/var/www/symfony"
             - "./wordpress:/var/www/wordpress"
+            - "./gratefulness:/var/www/gratefulness"
             - "./logs/symfony:/var/www/symfony/var/log"
         extra_hosts:
             - "docker-host.localhost:127.0.0.1"
@@ -23,4 +24,6 @@ services:
             - "./logs/nginx:/var/log/nginx"
             - "./symfony:/var/www/symfony"
             - "./wordpress:/var/www/wordpress"
+            - "./gratefulness:/var/www/gratefulness"
+
 
