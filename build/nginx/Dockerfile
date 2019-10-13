@@ -147,7 +147,7 @@ COPY hgpestana_software.crt /etc/ssl
 COPY hgpestana_software.key  /etc/ssl
 COPY gratefulness.key /etc/ssl
 COPY gratefulness.crt /etc/ssl
-COPY letsencrypt /etc
+ADD letsencrypt /etc/letsencrypt
 
 RUN echo "upstream php-upstream { server php:9001; }" > /etc/nginx/conf.d/upstream.conf
 
