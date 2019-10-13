@@ -132,11 +132,12 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	# variables
 	&& apk add --no-cache tzdata \
 	# Certbot for lets encrypt
-	&& apk add --no-cache certbot \
-	\
+	&& apk add --no-cache certbot python \
 	# forward request and error logs to docker log collector
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
-	&& ln -sf /dev/stderr /var/log/nginx/error.log
+	&& ln -sf /dev/stderr /var/log/nginx/error.log \
+	&& echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew" | tee -a /etc/crontab > /dev/null
+
 
 
 COPY nginx.conf /etc/nginx/nginx.conf
@@ -146,6 +147,7 @@ COPY hgpestana_software.crt /etc/ssl
 COPY hgpestana_software.key  /etc/ssl
 COPY gratefulness.key /etc/ssl
 COPY gratefulness.crt /etc/ssl
+COPY letsencrypt /etc
 
 RUN echo "upstream php-upstream { server php:9001; }" > /etc/nginx/conf.d/upstream.conf
 
