@@ -1,20 +1,20 @@
 server {
 	listen 80;
 	listen [::]:80;
-	server_name hgpestana.software www.hgpestana.software;
+	server_name hgpestana.dev www.hgpestana.dev;
 	return 301 https://$server_name$request_uri;
 }
 
 server {
-        server_name hgpestana.software www.hgpestana.software;
+        server_name hgpestana.dev www.hgpestana.dev;
         root /var/www/wordpress;
         index index.php;
 
         listen 443;
         ssl on;
 
-        ssl_certificate /etc/ssl/hgpestana_software.crt;
-        ssl_certificate_key /etc/ssl/hgpestana_software.key;
+        ssl_certificate /etc/ssl/hgpestana_dev.crt;
+        ssl_certificate_key /etc/ssl/hgpestana_dev.key;
 
 	 location = /favicon.ico {
             log_not_found off;
